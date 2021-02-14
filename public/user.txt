@@ -1,0 +1,7 @@
+User: serwetik, Phone: +7 (978) 771-01-43, Date: 12 октября 2023 года в 09-00 утра, Barber: Gus Fring
+User: , Phone: , Date: , Barber: Walter White
+User: , Phone: , Date: , Barber: Walter White
+User: serwetik, Phone: 9379992, Date: 12 октября 2023 года в 09-00 утра, Barber: Gus Fring, Color: 
+User: , Phone: , Date: , Barber: Walter White, Color: #a4bdfc
+User: souveren, Phone: 8-34-63, Date: Не приду завтра, Barber: Gus Fring, Color: Bold red
+User: , Phone: , Date: , Barber: Walter White, Color: #7bd148
