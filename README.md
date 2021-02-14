@@ -1,4 +1,4 @@
-# Lesson 22
+# Lesson 23_24
 ====================
 
-Repository for Lesson 22
+Repository for Lesson 23_24
