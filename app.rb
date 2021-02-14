@@ -29,7 +29,7 @@ post '/visit' do
 	@date_time = params[:datetime]
 	@walter = params[:barbers]
 	@color = params[:color]
-	
+
 # Validation check form
 
 	hh = {  :username => "Enter name", :phone => "Enter phone", 
@@ -47,7 +47,13 @@ post '/visit' do
   			return erb :visit
 		end
 	end
-
+=begin	
+#Еще короче способ есть 
+@error = hh.select {|key,_| params[key] == ""}.values.join(", ")
+if @error != ''
+	return erb :visit
+end
+=end
 	
 	@t = Time.now
 	f = File.open './public/user.txt', 'a'
