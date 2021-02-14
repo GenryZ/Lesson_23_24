@@ -82,6 +82,26 @@ end
 	f.close
 	erb :message_2	
 end
+
+post '/contact' do 
+
+Pony.mail(
+   :messages => params[:messages],
+  :email => params[:email],
+  :to => 'serwet13@gmail.com',
+  :port => '587',
+  :via => :smtp,
+  :via_options => { 
+    :address              => 'smtp.gmail.com', 
+    :port                 => '587', 
+    :enable_starttls_auto => true, 
+    :user_name            => 'serwet13', 
+    :password             => 'p@55w0rd', 
+    :authentication       => :plain, 
+    :domain               => 'localhost.localdomain'
+  })
+redirect '/success' 
+end
 post '/admin' do 
 	@login = params[:login]
 	@pass = params[:password]
@@ -93,26 +113,4 @@ post '/admin' do
 	@report = '<p><h1>Access denied</h1></p>'
 	erb :admin
 	end
-end
-post '/contact' do 
-
-Pony.mail(
-   :name => params[:name],
-  :mail => params[:mail],
-  :body => params[:body],
-  :to => 'a_lumbee@gmail.com',
-  :subject => params[:name] + " has contacted you",
-  :body => params[:message],
-  :port => '587',
-  :via => :smtp,
-  :via_options => { 
-    :address              => 'smtp.gmail.com', 
-    :port                 => '587', 
-    :enable_starttls_auto => true, 
-    :user_name            => 'lumbee', 
-    :password             => 'p@55w0rd', 
-    :authentication       => :plain, 
-    :domain               => 'localhost.localdomain'
-  })
-redirect '/success' 
 end
