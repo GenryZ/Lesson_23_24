@@ -5,3 +5,8 @@ User: serwetik, Phone: 9379992, Date: 12 октября 2023 года в 09-00 �
 User: , Phone: , Date: , Barber: Walter White, Color: #a4bdfc
 User: souveren, Phone: 8-34-63, Date: Не приду завтра, Barber: Gus Fring, Color: Bold red
 User: , Phone: , Date: , Barber: Walter White, Color: #7bd148
+User: , Phone: +7 (978) 771-01-43, Date: 12 октября 2023 года в 09-00 утра, Barber: Jessie Pinkman, Color: #a4bdfc
+User: , Phone: , Date: , Barber: Walter White, Color: #7bd148
+User: serwetik, Phone: +7 (978) 771-01-43, Date: 45 , Barber: Jessie Pinkman, Color: #5484ed
+Time: 2021-02-14 14:04:30 +0300 User: serwetik, Phone: +7 (978) 771-01-43, Date: 12 октября 2023 года в 09-00 утра, Barber: Jessie Pinkman, Color: #a4bdfc
+Time: 2021-02-14 14:04:55 +0300 User: testo_steron, Phone: +7 (978) 771-01-43, Date: 8 утра завтра, Barber: Gus Fring, Color: #51b749
