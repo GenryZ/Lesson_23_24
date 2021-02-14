@@ -32,18 +32,22 @@ post '/visit' do
 	
 # Validation check form
 
-	if @user_name == ""
-		@error = "Enter your name"
+	hh = {  :username => "Enter name", :phone => "Enter phone", 
+  			:datetime => "Enter datetime"}
+
+  	hh.each do |key, value|
+  		#Если параметр пуст
+
+  		if params[key] == ""
+
+  		#переменной error присвоить value из хэша hh
+
+  			@error = hh[key]
+
+  			return erb :visit
+		end
 	end
-	if @phone == ""
-		@error = "Enter phone number"
-	end
-	if @date_time == ""
-		@error = "Enter date time"
-	end
-	if @error != ""
-		return erb :visit
-	end
+
 	
 	@t = Time.now
 	f = File.open './public/user.txt', 'a'
