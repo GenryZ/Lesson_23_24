@@ -2,10 +2,11 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 get '/' do
-	erb "Hello <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School!!!</a>"			
+	erb "Hello there <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School!!!</a>"			
 end
 
 get '/about' do
+	@error = 'something wrong!!!'
 	erb :about
 end
 
@@ -28,8 +29,15 @@ post '/visit' do
 	@date_time = params[:datetime]
 	@walter = params[:barbers]
 	@color = params[:color]
+	
+	if @user_name == ""
+		@error = "Enter your name"
+		return erb :visit
+	end
+	
+	@t = Time.now
 	f = File.open './public/user.txt', 'a'
-	f.write "User: #{@user_name}, Phone: #{@phone}, Date: #{@date_time}, Barber: #{@walter}, Color: #{@color}\n"
+	f.write "Time: #{@t} User: #{@user_name}, Phone: #{@phone}, Date: #{@date_time}, Barber: #{@walter}, Color: #{@color}\n"
 	f.close
 	erb :message	
 end
