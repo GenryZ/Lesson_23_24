@@ -63,9 +63,21 @@ end
 end
 post '/contacts' do 
 	@email = params[:email]
-	@message = params[:message]
-	f = File.open './public/contacts.txt', 'a'
-	f.write "Email user: #{@email}\nMessage: #{@message}\n"
+	@messages = params[:messages]
+
+#Vaditation of contacts 
+gg = {:email => "Enter email",
+		:messages => "You write nothing"
+}
+gg.each do |key, value| 
+	if params[key] == ""
+		@error = gg[key]
+		return erb :contacts
+	end
+end
+
+	f = File.open './public/contact.txt', 'a'
+	f.write "Email user: #{@email}\nMessage: #{@messages}\n"
 	f.close
 	erb :message_2	
 end
