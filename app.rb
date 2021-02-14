@@ -6,7 +6,7 @@ get '/' do
 end
 
 get '/about' do
-	@error = 'something wrong!!!'
+	
 	erb :about
 end
 
@@ -30,8 +30,18 @@ post '/visit' do
 	@walter = params[:barbers]
 	@color = params[:color]
 	
+# Validation check form
+
 	if @user_name == ""
 		@error = "Enter your name"
+	end
+	if @phone == ""
+		@error = "Enter phone number"
+	end
+	if @date_time == ""
+		@error = "Enter date time"
+	end
+	if @error != ""
 		return erb :visit
 	end
 	
