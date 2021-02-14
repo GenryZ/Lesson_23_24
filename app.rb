@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'pony'
 get '/' do
 	erb "Hello there <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School!!!</a>"			
 end
@@ -92,4 +93,26 @@ post '/admin' do
 	@report = '<p><h1>Access denied</h1></p>'
 	erb :admin
 	end
+end
+post '/contact' do 
+
+Pony.mail(
+   :name => params[:name],
+  :mail => params[:mail],
+  :body => params[:body],
+  :to => 'a_lumbee@gmail.com',
+  :subject => params[:name] + " has contacted you",
+  :body => params[:message],
+  :port => '587',
+  :via => :smtp,
+  :via_options => { 
+    :address              => 'smtp.gmail.com', 
+    :port                 => '587', 
+    :enable_starttls_auto => true, 
+    :user_name            => 'lumbee', 
+    :password             => 'p@55w0rd', 
+    :authentication       => :plain, 
+    :domain               => 'localhost.localdomain'
+  })
+redirect '/success' 
 end
